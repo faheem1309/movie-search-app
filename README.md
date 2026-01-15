@@ -1,70 +1,170 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<marquee behavior="alternate" scrollamount="6">
+🎬✨ <b>MOVIE SEARCH WEB APPLICATION</b> ✨🎬
+</marquee>
 
-## Available Scripts
+<br/>
 
-In the project directory, you can run:
+<img src="https://img.shields.io/badge/React-18-blue?logo=react&logoColor=white"/>
+<img src="https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript"/>
+<img src="https://img.shields.io/badge/OMDb-API-red"/>
+<img src="https://img.shields.io/badge/Project-Type%20Basic--to--Intermediate-success"/>
+<img src="https://img.shields.io/badge/Status-Completed-brightgreen"/>
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📌 Project Description
 
-### `npm test`
+The **Movie Search Web Application** is a React-based frontend project that allows users to search for movies and view detailed information using the **OMDb API**.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project demonstrates:
+- API integration
+- React Hooks usage
+- Component-based architecture
+- Clean and responsive UI design
+- Real-world data handling
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🎯 Core Functionalities
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+✔ Search movies by name  
+✔ Fetch real-time movie data from OMDb API  
+✔ Display movie posters, titles, and release years  
+✔ Click on a movie to view full details  
+✔ Modal-based movie information display  
+✔ Graceful handling of missing posters  
+✔ Error-safe API responses  
+✔ Responsive grid-based layout  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🧠 What This App Does
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Takes user input for movie search
+- Sends API requests dynamically
+- Displays search results as reusable movie cards
+- Fetches full movie details only on click
+- Shows detailed information in a modal
+- Prevents unnecessary API calls
+- Handles invalid searches safely
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This application focuses on **clarity, correctness, and scalability**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🛠️ Tech Stack Used
 
-## Learn More
+<div align="center">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src="https://skillicons.dev/icons?i=react,js,html,css,git,github" />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+</div>
 
-### Code Splitting
+- React JS
+- JavaScript (ES6)
+- HTML5
+- CSS3
+- OMDb REST API
+- Git & GitHub
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 📂 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+movie-search-app/
+│
+├── public/
+│ └── index.html
+│
+├── src/
+│ ├── components/
+│ │ ├── MovieCard.js
+│ │ └── MovieModal.js
+│ │
+│ ├── App.js
+│ ├── index.js
+│ ├── App.css
+│ └── index.css
+│
+├── package.json
+└── README.md
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## ⚙️ Installation & Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+git clone https://github.com/your-username/movie-search-app.git
 
-### Deployment
+cd movie-search-app
+npm install
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+The application runs locally on:
+http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+---
+
+## 🌐 API Information
+
+**OMDb API**  
+Used to fetch:
+- Movie search results
+- Movie posters
+- IMDb ratings
+- Movie metadata
+https://www.omdbapi.com
+
+
+---
+
+## 🚀 Future Enhancements (Evolution Scope)
+
+- Favorites / Watchlist feature
+- Pagination for large search results
+- Advanced search filters (year, type, rating)
+- User authentication
+- Recommendation system
+- Backend integration
+- Improved UI animations
+- Mobile-first optimization
+
+---
+
+## 🧩 Project Classification
+
+> **Basic to Intermediate React Project**
+
+Suitable for:
+- College mini-projects
+- React fundamentals practice
+- Portfolio projects
+- Live demonstrations
+- Interview discussions
+
+---
+
+## 🤝 Acknowledgements
+
+- OMDb API
+- React Documentation
+- Open-source developer community
+
+---
+
+<div align="center">
+
+<marquee behavior="scroll" direction="left" scrollamount="5">
+🚀 Built with React • Real API Integration • Clean Architecture • Scalable Design 🚀
+</marquee>
+
+<br/>
+⭐ Star this repository if you find it useful ⭐
+
+</div>
