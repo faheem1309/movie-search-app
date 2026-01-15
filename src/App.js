@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MovieCard from "./components/MovieCard";
 import MovieModal from "./components/MovieModal";
 import "./App.css";
@@ -9,25 +9,40 @@ function App() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const searchMovies = async () => {
-    if (!query) return;
+  const fetchMovies = async (searchTerm) => {
+    if (!searchTerm) return;
+    setLoading(true);
 
     const response = await fetch(
-      `https://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`
+      `https://www.omdbapi.com/?s=${searchTerm}&apikey=${API_KEY}`
     );
     const data = await response.json();
 
-    if (data.Search) {
+    if (data.Response === "True") {
       setMovies(data.Search);
     } else {
       setMovies([]);
     }
+    setLoading(false);
   };
+
+  // Load default movies on first load
+  useEffect(() => {
+    fetchMovies("Batman");
+  }, []);
+
+  // Live search
+  useEffect(() => {
+    if (query.length >= 3) {
+      fetchMovies(query);
+    }
+  }, [query]);
 
   return (
     <div className="app">
-      <h1>Movie Search App</h1>
+      <h1>🎬 Movie Search App</h1>
 
       <div className="search-box">
         <input
@@ -36,8 +51,9 @@ function App() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button onClick={searchMovies}>Search</button>
       </div>
+
+      {loading && <p>Loading movies...</p>}
 
       <div className="movie-grid">
         {movies.map((movie) => (
