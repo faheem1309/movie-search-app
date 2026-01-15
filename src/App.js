@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import MovieCard from "./components/MovieCard";
 import MovieModal from "./components/MovieModal";
 import "./App.css";
 
-const API_KEY = " 2f27f8bf";
+const API_KEY = "2f27f8bf";
 
 function App() {
   const [query, setQuery] = useState("");
