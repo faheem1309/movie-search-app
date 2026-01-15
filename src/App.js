@@ -1,57 +1,59 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import MovieCard from "./components/MovieCard";
+import MovieModal from "./components/MovieModal";
+import "./App.css";
 
-const API_KEY = "2f27f8bf";
+const API_KEY = " 2f27f8bf";
 
 function App() {
-  const [search, setSearch] = useState("avengers");
+  const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
-  const fetchMovies = async () => {
-    if (!search) return;
-    setLoading(true);
+  const searchMovies = async () => {
+    if (!query) return;
+
     const response = await fetch(
-      `https://www.omdbapi.com/?s=${search}&apikey=${API_KEY}`
+      `https://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`
     );
     const data = await response.json();
-    setMovies(data.Search || []);
-    setLoading(false);
+
+    if (data.Search) {
+      setMovies(data.Search);
+    } else {
+      setMovies([]);
+    }
   };
 
-  useEffect(() => {
-    fetchMovies();
-  }, []);
-
   return (
-    <div className="container">
+    <div className="app">
       <h1>Movie Search App</h1>
 
-      <form
-        className="search-bar"
-        onSubmit={(e) => {
-          e.preventDefault();
-          fetchMovies();
-        }}
-      >
+      <div className="search-box">
         <input
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          type="text"
           placeholder="Search movies..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
         />
-        <button>Search</button>
-      </form>
+        <button onClick={searchMovies}>Search</button>
+      </div>
 
-      {loading ? (
-        <p>Loading...</p>
-      ) : movies.length > 0 ? (
-        <div className="movies">
-          {movies.map((movie) => (
-            <MovieCard key={movie.imdbID} movie={movie} />
-          ))}
-        </div>
-      ) : (
-        <p>No movies found</p>
+      <div className="movie-grid">
+        {movies.map((movie) => (
+          <MovieCard
+            key={movie.imdbID}
+            movie={movie}
+            onSelect={setSelectedMovie}
+          />
+        ))}
+      </div>
+
+      {selectedMovie && (
+        <MovieModal
+          imdbID={selectedMovie}
+          onClose={() => setSelectedMovie(null)}
+        />
       )}
     </div>
   );
