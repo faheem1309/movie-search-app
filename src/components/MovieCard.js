@@ -1,11 +1,13 @@
-function MovieCard({ movie }) {
+import React from "react";
+
+const MovieCard = ({ movie, onSelect }) => {
   return (
-    <div className="movie-card">
+    <div className="movie-card" onClick={() => onSelect(movie.imdbID)}>
       <img
         src={
           movie.Poster !== "N/A"
             ? movie.Poster
-            : "https://via.placeholder.com/200x270?text=No+Image"
+            : "https://via.placeholder.com/300x450?text=No+Image"
         }
         alt={movie.Title}
       />
@@ -13,6 +15,6 @@ function MovieCard({ movie }) {
       <p>{movie.Year}</p>
     </div>
   );
-}
+};
 
 export default MovieCard;
