@@ -79,3 +79,28 @@ body {
   padding: 5px 10px;
   cursor: pointer;
 }
+
+.modal-content {
+  background: #1c1c1c;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;      /* 👈 important */
+  overflow-y: auto;      /* 👈 important */
+  padding: 20px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 300px;     /* 👈 limits image height */
+  object-fit: contain;  /* 👈 prevents cropping */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.plot {
+  margin-top: 10px;
+  line-height: 1.5;
+  color: #ddd;
+}
