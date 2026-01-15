@@ -123,6 +123,8 @@ https://www.omdbapi.com
 
 
 ---
+**
+Live Preview**:faheem-reel-explorer.netlify.app
 
 ## 🚀 Future Enhancements (Evolution Scope)
 
