@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const API_KEY = " 2f27f8bf";
+const API_KEY = "2f27f8bf";
 
 const MovieModal = ({ imdbID, onClose }) => {
   const [movie, setMovie] = useState(null);
