@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>🎬 Movie Search App</h1>
+      <h1>🎬 Faheem's Reel Explorer</h1>
 
       <div className="search-box">
         <input
